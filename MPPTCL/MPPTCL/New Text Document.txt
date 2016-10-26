@@ -1,0 +1,57 @@
+II
+9 magnetising current from LV side tap number
+11 transformer winding resistance measurement
+
+III
+Differential relay testing details
+
+
+
+Testing details of backup over - current relays on HV,IV & LV sides
+
+
+
+Testing of restricted earth fault relay
+
+
+
+Testing of over fluxing relay
+
+
+
+Measurement of IR values and leakage current of HV & LV LAs
+
+
+
+HV CT's maintenance details
+
+
+
+IV CT's maintenance details
+
+
+
+
+
+LV CT's maintenance details
+
+
+
+
+
+HV circuit breaker maintenance details
+
+
+
+IV circuit breaker maintenance details
+
+
+
+LV circuit breaker maintenance details
+
+
+
+controlling assistant engineer, testing division
+
+details of other equipments in the bay installed with transformer
+

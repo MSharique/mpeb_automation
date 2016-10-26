@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class A2P1
+{
+ public static void main (String args[])
+  {
+    Scanner sc= new Scanner(System.in);
+    int a[]= new int[5];
+    System.out.println("Enter 5 elemets of the array");
+    for(int i=0;i<5;i++)
+     {
+      a[i]=sc.nextInt();
+     }
+    for(int i=5;i>0;i--)
+     {
+      for(j=0;j<i;j++)
+       {
+        if(a[j]>a[j+1])
+         {
+          a[j]=a[j]+a[j+1];
+          a[j+1]=a[j]-a[j+1];
+          a[j]=a[j]-a[j+1];
+         }
+       }
+     }
+     int b[]=new int[5];
+     System.arraycopy(a,0,b,0,5);
+     for (int i=0;i<5;i++)
+      System.out.println(b[i]);
+  }
+}

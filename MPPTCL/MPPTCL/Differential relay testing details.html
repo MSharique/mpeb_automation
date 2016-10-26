@@ -1,0 +1,122 @@
+<%@page import= "java.io.*"%>
+<%@page import ="javax.servlet.*"%>
+<%@page import ="javax.servlet.http.*"%>
+<%@page import ="java.io.*"%>
+<%@page import ="java.sql.*"%>
+<%@page import ="java.util.*"%>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Diff_relay_test_details</title>
+       <style type="text/css">
+body,td,th {
+	color: #000;
+}
+body {
+	background-image: url(website-backgrounds-download-hd-from-hd.jpg);
+}
+</style>
+    </head>
+    <body style="background-color: lavender">
+        <div align="right">
+  <table width="100" border="0">
+    <tr>
+      <td><div align="right"><a href="index.html">back to index</a></div></td>
+    </tr>
+    <tr>
+      <td><div align="right"><a href="index2.html">logout</a></div></td>
+    </tr>
+  </table>
+</div>
+<form id="form1" name="form1" method="post" action="view2_RECORDS_OF_SYSTEM_DISTURBANCES_MAJOR_TRIPPINGS_FACED_BY_TARANSFORMER.jsp">
+  <center>
+
+    <h1 align="center">DIFFERENTIAL RELAY TESTING DETAILS</h1><br/><br/>
+         <table border="1" width="1600" align="center" >
+      <tr>
+      <th >S.No</th>
+      <th colspan="3">Relay Details</th>
+      <th colspan="4">Relay Setting Details</th>
+      <th width="89" rowspan="3">Date Of Testing</th>
+      <th width="100" rowspan="3">Reason of Testing</th>
+      <th width="125" rowspan="3"> As found Pickup current</th>
+      <th width="199" rowspan="3">Relay Pickup Current after adjustment</th>
+      <th width="237" rowspan="3">Whether any changes in auxiliary CT ratio done</th>
+      <th width="213" rowspan="3">Remarks Name & Signature of Engineer</th>
+    </tr>
+    <tr>
+      <th width="41" rowspan="2">Make</th>
+      <th width="34" rowspan="2">Type</th>
+      <th width="111" rowspan="2">Date of Installation</th>
+      <th colspan="3">Auxillary CT ratio</th>
+      <th width="249" rowspan="2">Prescribed/Recommended Relay Pickup Current</th>
+      </tr>
+    <tr>
+      <th width="35">HV</th>
+      <th width="26">IV</th>
+      <th width="59">LV</th>
+      </tr>
+              
+          <% Class.forName("com.mysql.jdbc.Driver");%>
+<% Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3308/mpeb2","root","lokesh");%>
+<% Statement st = con.createStatement();%>
+<% ResultSet rs = st.executeQuery("select * from differential_relay_testing_details");%>
+<% int i=1;%>
+<% if(rs.next()){%>
+
+  <tr>
+  <% do{%>
+<%String s1 = rs.getString("make");%>
+<%String s2 = rs.getString("type");%>
+<%String s3 = rs.getString("date_of_ins");%>
+<%String s4 = rs.getString("HV");%>
+<%String s5 = rs.getString("IV");%>
+<%String s6 = rs.getString("LV");%>
+<%String s7 = rs.getString("rec_current");%>
+<%String s8 = rs.getString("date_testing");%>
+<%String s9 = rs.getString("reason_testing");%>
+<%String s10 = rs.getString("found_current");%>
+<%String s11 = rs.getString("current_after_adjustment");%>
+<%String s12 = rs.getString("changes");%>
+<%String s13 = rs.getString("remarks");%>
+
+
+
+
+<th width="58" scope="col"><a href="update.html">edit</a></th>
+    <th width="41" height="51" scope="col"><%=i%></th>
+    <th width="193" scope="col"><%=s1%></th>
+    <th width="302" scope="col"><%=s2%></th>
+    <th width="255" scope="col"><%=s3%></th>
+    <th width="236" scope="col"><%=s4%></th>
+    <th width="261" scope="col"><%=s5%></th>
+    <th width="202" scope="col"><%=s6%></th>
+    <th width="193" scope="col"><%=s7%></th>
+    <th width="302" scope="col"><%=s%></th>
+    <th width="255" scope="col"><%=s3%></th>
+    <th width="236" scope="col"><%=s4%></th>
+    <th width="261" scope="col"><%=s5%></th>
+    <th width="202" scope="col"><%=s6%></th>
+    <th width="193" scope="col"><%=s1%></th>
+
+  </tr>
+  <% i++;%>
+<% }while(rs.next());%>
+<% }%>
+
+
+                
+          </table>
+          <% rs.close();%>
+        <p>&nbsp;</p>
+  
+</p>
+
+    <input type="submit" name="button" id="button" value="insert data" />
+  </center>
+</form>
+       
+    </body>
+</html>
